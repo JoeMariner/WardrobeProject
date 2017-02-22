@@ -1,0 +1,26 @@
+﻿@model WardrobeProject.Models.TypeOfClothing
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TypeOfClothing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClothingType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClothingType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TypeOfClothingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

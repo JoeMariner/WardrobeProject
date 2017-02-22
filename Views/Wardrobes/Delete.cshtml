@@ -1,0 +1,38 @@
+﻿@model WardrobeProject.Models.Wardrobe
+
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@*In the delete page. The user will "buy" the item, taking it off the shelf.*@
+
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>@Html.DisplayFor(model => model.Name)</h4>
+        <img src="@Url.Content(Model.Photo)" class="img-responsive" height="250" width="250" />
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-actions no-color">
+
+            @*Hodor apporves*@
+            <img src="~/Content/images/hodorhead.png" class="img-responsive" /> HODOR!"Hodor likes the choice you made!"
+            <br />
+            <br />
+            @*the form for the delete action
+                Two buttons: One will delete (in this case "buy") the item. The other will return the user to the item index page.*@
+
+            @using (Html.BeginForm()) 
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Buy it!" class="btn btn-default" /> <a href="~/Wardrobes/Index" class="btn btn-default" role="button">Sorry, I changed my mind</a>
+                <br />
+                
+                
+            }
+        </div>
+    </div>
+
+</div>

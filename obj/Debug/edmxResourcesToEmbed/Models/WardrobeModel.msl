@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WardrobeDBModelStoreContainer" CdmEntityContainer="WardrobeDBEntities">
+    <EntitySetMapping Name="TypeOfClothings">
+      <EntityTypeMapping TypeName="WardrobeDBModel.TypeOfClothing">
+        <MappingFragment StoreEntitySet="TypeOfClothing">
+          <ScalarProperty Name="TypeOfClothingID" ColumnName="TypeOfClothingID" />
+          <ScalarProperty Name="ClothingType" ColumnName="ClothingType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wardrobes">
+      <EntityTypeMapping TypeName="WardrobeDBModel.Wardrobe">
+        <MappingFragment StoreEntitySet="Wardrobe">
+          <ScalarProperty Name="WardrobeID" ColumnName="WardrobeID" />
+          <ScalarProperty Name="TypeOfClothingID" ColumnName="TypeOfClothingID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Occasion" ColumnName="Occasion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

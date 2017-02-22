@@ -1,0 +1,86 @@
+﻿@model IEnumerable<WardrobeProject.Models.Wardrobe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <h1>Buy somethin' will ya!</h1>
+</div>
+<div class="row">
+    @*Loops through to populate 3 columns per row*@
+    @foreach (var item in Model) 
+    {
+
+        <div class="col-md-4 bg-default">
+            <div id="thumb" class="thumbnail">
+                <div class="caption">
+                   
+                    <h4>@Html.DisplayFor(modelItem => item.TypeOfClothing.ClothingType)</h4> @*Displays clothing type*@
+                    <br />
+                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3> @*Displays name of product*@
+                    <br />
+                  <center>  <img src="~/Content/images/coathanger.png" class="img-responsive" height="150" width="150" /></center> @*Shows picture of coat hanger*@
+                    <br />
+                    @Html.ActionLink("Check it out!", "Details", new { id = item.WardrobeID }, new { @class = "btn btn-danger", role = "button" }) @*Button to go to details of item*@
+                    
+                </div>
+            </div>
+        </div>
+      
+    }
+</div>
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeOfClothing.ClothingType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Season)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Occasion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeOfClothing.ClothingType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Photo)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Season)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occasion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WardrobeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WardrobeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WardrobeID })
+        </td>
+    </tr>
+}
+
+</table>*@

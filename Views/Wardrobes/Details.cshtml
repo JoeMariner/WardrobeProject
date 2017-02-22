@@ -1,0 +1,43 @@
+﻿@model WardrobeProject.Models.Wardrobe
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <div class="col-md-6"> 
+        <img src="@Url.Content(Model.Photo)" class="img-responsive" height="250" width="250" /> @*Shows unique image specific to item*@
+    </div>
+    
+
+<div class="col-md-6 ">
+    <h4>@Html.DisplayNameFor(model => model.TypeOfClothing.ClothingType):</h4>
+    @Html.DisplayFor(model => model.TypeOfClothing.ClothingType)
+    <br />
+    <br />
+
+    <h4>@Html.DisplayNameFor(model => model.Color):</h4>
+    @Html.DisplayFor(model => model.Color)
+   <br />
+    <br />
+    <h4> @Html.DisplayNameFor(model => model.Season):</h4>
+        @Html.DisplayFor(model => model.Season)
+   <br />
+    <br />
+        <h4>@Html.DisplayNameFor(model => model.Occasion):</h4>
+        @Html.DisplayFor(model => model.Occasion)
+    <br />
+    <br />
+    <br /> @*When user selects "Buy it!", it'll go to the delete page for that item. It's a nice transistion. Looks like the same screen.*@
+    @Html.ActionLink("Buy it!", "Delete", new { id = Model.WardrobeID }, new { @class = "btn btn-default", role = "button" }) <a href="~/Wardrobes/Index" class="btn btn-default" role="button">Back to list</a>
+
+    </div>
+</div>
+  
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WardrobeID }) |
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>
